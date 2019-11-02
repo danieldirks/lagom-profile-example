@@ -15,5 +15,16 @@ lazy val profileApi = (project in file("profile-api"))
   )
   .dependsOn(common)
 
+lazy val profileImpl = (project in file("profile-impl"))
+  .enablePlugins(LagomScala)
+  .settings(
+    libraryDependencies ++= Seq(
+      lagomScaladslPersistenceCassandra,
+      lagomScaladslKafkaBroker,
+      "com.softwaremill.macwire" %% "macros" % "2.2.5" % "provided",
+    )
+  )
+  .dependsOn(profileApi)
+
 lazy val root = (project in file("."))
-    .aggregate(profileApi)
+    .aggregate(profileApi, profileImpl)
