@@ -15,7 +15,7 @@ abstract class ProfileApplication(context: LagomApplicationContext)
     with CassandraPersistenceComponents {
 
   override lazy val lagomServer: LagomServer = serverFor[ProfileService](wire[ProfileServiceImpl])
-  override lazy val jsonSerializerRegistry: JsonSerializerRegistry = ???
+  override lazy val jsonSerializerRegistry: JsonSerializerRegistry = ProfileSerializerRegistry
 }
 
 class ProfileApplicationLoader extends LagomApplicationLoader {
