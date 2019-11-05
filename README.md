@@ -2,6 +2,8 @@
 
 Example implementation of a profile microservice using Lagom
 
+[![MIT License](https://img.shields.io/github/license/danieldirks/lagom-profile-example.svg)](./LICENSE)
+
 
 ## Installation
 
@@ -59,3 +61,8 @@ curl -X DELETE localhost:9000/v1/profile/<uuid>
 ```
 curl localhost:9000/ping
 ```
+
+
+## License
+
+The project is licensed under the [MIT License](./LICENSE).
